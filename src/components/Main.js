@@ -24,9 +24,6 @@ const Main = ()=>{
         
 
     }
-    const updateServer=()=>{
-        ws.send(JSON.stringify({pizza:false,coke:false}))
-    }
     const reset =()=>{
         ws.send(JSON.stringify({pizza:true,coke:true}))
     }
@@ -34,22 +31,22 @@ const Main = ()=>{
         <Fragment>
         <div className={'root'}> 
             <div className={'item-container'}>       
-            <Card style={{ width: '16rem', margin:'1rem'}} >
+            <Card style={{ width: '30rem', margin:'1rem'}} >
                 <Card.Img src='pizza.png' className='item-img'></Card.Img>
                 <Card.Text>
-                <Button variant={'success'} onClick={selectPizza} disabled={!pizza} className ='item-button'> Pizza</Button>
+                <Button variant={'success'} onClick={selectPizza} style={{fontSize:'20px' }} disabled={!pizza} className ='item-button'> Pizza</Button>
                 </Card.Text>  
             </Card>
          
-            <Card style={{ width: '16rem', margin:'1rem' }}>
-            <Card.Img src='pizza.png' className='item-img' ></Card.Img>
+            <Card style={{ width: '30rem', margin:'1rem' }}>
+            <Card.Img src='coke.jpg' className='item-img' ></Card.Img>
              <Card.Text>
-                <Button variant='success' onClick={selectCoke}  disabled={!coke} className ='item-button' > Coke</Button>
+                <Button variant='success' onClick={selectCoke} style={{fontSize:'20px' }}  disabled={!coke} className ='item-button' > Coke</Button>
             </Card.Text>  
             </Card>
             </div>
             <div className={'reset-button'}>
-            <Button variant="danger" onClick={reset}>Reset</Button>
+            <Button variant="danger" style={{fontSize:'20px' }} onClick={reset}>Reset</Button>
             </div>
         </div> 
         </Fragment>

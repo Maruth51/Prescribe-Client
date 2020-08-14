@@ -20,7 +20,9 @@ body{
   justify-content: center;
 }
 .item-img{
-  width: 80%;
+  width: 70%;
+  height: 75%;
+
 }
 .item-button{
   margin: 3% 5%;
@@ -31,6 +33,4 @@ body{
   justify-content: center;
   margin-top: 10px;
 }
-.App{
-   background-color: blue;
-}
+
