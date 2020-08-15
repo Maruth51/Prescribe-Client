@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Button, Alert } from 'react-bootstrap';
+import { Button  } from 'react-bootstrap';
 import { loginUser } from '../utils/userService';
 import { useHistory } from 'react-router-dom';
 
@@ -43,12 +43,12 @@ function Login() {
 </div>}
              <form id="login-form" className="needs-validation" onSubmit={handleSubmit} noValidate>
                   <div className="form-group">
-                    <input type="text" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}} value={email} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                    <input type="text" name="email" id="email" tabIndex="1" className="form-control" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}} value={email} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
                     <div className='invalid-feedback' style={{fontSize:'12px'}}>{email.length===0 ? "Email is Required" : "Invalid Email"}</div>
                   </div>
                   <div className="form-group">
-                    <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} value={password} maxLength='8' minLength='8' required/>
-                    <div className='invalid-feedback' style={{fontSize:'12px'}}>Password should be 8 character</div>
+                    <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} value={password}  minLength='8' required/>
+                    <div className='invalid-feedback' style={{fontSize:'12px'}}>Password minium 8 character</div>
                   </div>
                   <div className="form-group">
                     <div className="row">

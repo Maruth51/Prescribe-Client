@@ -1,10 +1,12 @@
 import React,{Fragment,useState, useEffect}from 'react';
-import {Container,Card, Row,Col,Button} from 'react-bootstrap'
+import {Card,Button} from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
 
 const Main = ()=>{
     const [pizza,setPizza] = useState(true)
     const [coke,setCoke] = useState(true)
-    const ws = new WebSocket('ws://localhost:8999/')
+    const history = useHistory()
+    const ws = new WebSocket('ws://prescribe-server.herokuapp.com/')
     useEffect(()=>{
         ws.onopen =()=>{
             console.log('connected')
@@ -27,6 +29,10 @@ const Main = ()=>{
     const reset =()=>{
         ws.send(JSON.stringify({pizza:true,coke:true}))
     }
+    const logout =()=>{
+        localStorage.removeItem('token')
+        history.push('/')
+    }
     return(
         <Fragment>
         <div className={'root'}> 
@@ -47,6 +53,7 @@ const Main = ()=>{
             </div>
             <div className={'reset-button'}>
             <Button variant="danger" style={{fontSize:'20px' }} onClick={reset}>Reset</Button>
+            <Button variant="danger" style={{fontSize:'20px' }} onClick={logout}>Logout</Button>
             </div>
         </div> 
         </Fragment>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
+import Main from "./Main";
 
 const checkAuth = () => {
   const token = localStorage.getItem("token");
@@ -13,8 +14,7 @@ const checkAuth = () => {
 const AuthRoute = (props) => (
   <Route
     render={props =>
-      checkAuth() ? ( props.children
-        
+      checkAuth() ? (<Main/>
       ) : (
         <Redirect to={{ pathname: "/" }} />
       )

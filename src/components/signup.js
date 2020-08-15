@@ -1,5 +1,5 @@
 import React,{useState, Fragment} from 'react';
-import { Button, Alert } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { registerUser } from '../utils/userService';
 import { useHistory } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ function Signup() {
 </div>}
         <form id="register-form" action="#" className='needs-validation' onSubmit={handleSubmit} noValidate>
                   <div className="form-group" onSubmit={handleSubmit}>
-                    <input type="text" name="email" id="email" tabIndex="1" onChange={(e)=>{setEmail(e.target.value)}} className="form-control" placeholder="Email" value={email} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+                    <input type="text" name="email" id="email" tabIndex="1" onChange={(e)=>{setEmail(e.target.value)}} className="form-control" placeholder="Email" value={email} pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
                     <div className='invalid-feedback' style={{fontSize:'12px'}}>{email.length===0 ? "Email is Required" : "Invalid Email"}</div>
 
                   </div>

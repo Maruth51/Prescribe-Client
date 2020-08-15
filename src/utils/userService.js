@@ -16,7 +16,7 @@ export const loginUser =async (email,password)=>{
           },
           body: JSON.stringify(data),
         };
-        const response = await fetch("http://localhost:8999/Login", config);
+        const response = await fetch("https://prescribe-server.herokuapp.com/Login", config);
           return await response.json()
       } catch (e) {
           console.error(e)
@@ -40,7 +40,7 @@ export const registerUser =async (email,password)=>{
           },
           body: JSON.stringify(data),
         };
-        const response = await fetch("http://localhost:8999/Signup", config);
+        const response = await fetch("https://prescribe-server.herokuapp.com/Signup", config);
           return await response.json()
       } catch (e) {
           console.error(e)
