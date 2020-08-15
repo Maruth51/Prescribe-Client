@@ -1,4 +1,4 @@
-import React,{Fragment,useState, useEffect}from 'react';
+import React,{Fragment,useState, useEffect} from 'react';
 import {Card,Button} from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ const Main = ()=>{
     const [pizza,setPizza] = useState(true)
     const [coke,setCoke] = useState(true)
     const history = useHistory()
-    const ws = new WebSocket('ws://prescribe-server.herokuapp.com/')
+    const ws = new WebSocket('wss://prescribe-server.herokuapp.com/')
     useEffect(()=>{
         ws.onopen =()=>{
             console.log('connected')
@@ -40,14 +40,14 @@ const Main = ()=>{
             <Card style={{ width: '30rem', margin:'1rem'}} >
                 <Card.Img src='pizza.png' className='item-img'></Card.Img>
                 <Card.Text>
-                <Button variant={'success'} onClick={selectPizza} style={{fontSize:'20px' }} disabled={!pizza} className ='item-button'> Pizza</Button>
+                <Button variant={pizza ? 'success' : 'secondary'} onClick={selectPizza} style={{fontSize:'20px' }} disabled={!pizza} className ='item-button'> Pizza</Button>
                 </Card.Text>  
             </Card>
          
             <Card style={{ width: '30rem', margin:'1rem' }}>
             <Card.Img src='coke.jpg' className='item-img' ></Card.Img>
              <Card.Text>
-                <Button variant='success' onClick={selectCoke} style={{fontSize:'20px' }}  disabled={!coke} className ='item-button' > Coke</Button>
+                <Button variant={coke ? 'success' : 'secondary'} onClick={selectCoke} style={{fontSize:'20px' }}  disabled={!coke} className ='item-button' > Coke</Button>
             </Card.Text>  
             </Card>
             </div>

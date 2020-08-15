@@ -53,7 +53,7 @@ function Login() {
                   <div className="form-group">
                     <div className="row">
                       <div className="col-sm-6 col-sm-offset-3 my-5">
-                          <Button  type='submit' disabled={issubmit} style={{fontSize:'20px' }} variant='success'size='lg'className='btn-login' block> {issubmit? "Login...":"Login"}</Button>
+                          <Button  type='submit' disabled={issubmit} style={{fontSize:'20px' }} variant='success'size='lg' block> {issubmit? "Login...":"Login"}</Button>
                       </div>
                     </div>
                   </div>

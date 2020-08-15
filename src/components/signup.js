@@ -66,7 +66,7 @@ function Signup() {
                   <div className="form-group">
                     <div className="row">
                       <div className="col-sm-6 col-sm-offset-3">
-    <Button type='submit' variant='success'size='lg'className='btn-login' style={{fontSize:'20px' }} disabled={issubmit} block>{issubmit ? 'Loading...':"Register"}</Button>
+    <Button type='submit' variant='success'size='lg'  style={{fontSize:'20px' }} disabled={issubmit} block>{issubmit ? 'Loading...':"Register"}</Button>
 
                       </div>
                     </div>
